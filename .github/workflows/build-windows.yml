@@ -64,7 +64,7 @@ jobs:
         pwd
         mkdir releases
         cd windows
-        mv nas-tools.exe /home/runner/work/nas-tools/nas-tools/releases/nastool_win_v${{ env.app_version }}.exe
+        mv nas-tools.exe /home/runner/work/nas/nas/releases/nastool_win_v${{ env.app_version }}.exe
         pwd
     - name: Create release
       id: create_release
