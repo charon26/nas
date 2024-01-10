@@ -21,14 +21,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install wheel numpy==1.23.5 pyparsing==3.0.9 wxpython==4.2.0 pyinstaller==5.7.0
         git clone --depth=1 -b master https://github.com/charon26/nas --recurse-submodule
-        cd nas-tools
+        cd nas
         pip install -r requirements.txt
         echo ("NASTOOL_CONFIG=D:/a/nas/nas/nas/config/config.yaml") >> $env:GITHUB_ENV
         echo $env:NASTOOL_CONFIG
       shell: pwsh
     - name: package through pyinstaller
       run: |
-        cd nas-tools
+        cd nas
         copy .\windows\rely\upx.exe c:\hostedtoolcache\windows\python\3.10.6\x64\Scripts
         copy .\windows\rely\hook-cn2an.py c:\hostedtoolcache\windows\python\3.10.6\x64\lib\site-packages\pyinstaller\hooks
         copy .\windows\rely\hook-zhconv.py c:\hostedtoolcache\windows\python\3.10.6\x64\lib\site-packages\pyinstaller\hooks
